@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+app.log
+chatbot.log
+streamlit.log
+nohup.out
+
+# Data Directories
+data/
+!data/.gitkeep
+
+# Oracle Wallet
+wallet/
+*.pem
+*.p12
+
+# Streamlit
+.streamlit/
+
+# Temporary Files
+*.tmp
+*.bak
+*.backup
+
+# Uploaded Documents
+data/unprocessed/*
+!data/unprocessed/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentation
+docs/_build/

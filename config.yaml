@@ -1,0 +1,129 @@
+# ============================================================================
+# Oracle 23ai RAG Chatbot Configuration
+# ============================================================================
+
+# Application Settings
+app:
+  title: "RAG based Chat Assistant"
+  page_title: "RAG based Chat Assistant"
+  layout: "centered"
+  port: 8501
+  enable_cors: false
+
+# Database Configuration
+database:
+  user: "ADMIN"
+  password: "${DB_PASSWORD}"  # Set via environment variable
+  dsn: "ga0nl4nq88uxuyk4_high"
+  host_ip: ""
+  service: ""
+  
+  # Wallet Configuration (for Autonomous DB)
+  wallet:
+    location: "/home/opc/wallet"
+    password: "${WALLET_PASSWORD}"  # Set via environment variable
+    config_dir: "/home/opc/wallet"
+
+# OCI Configuration
+oci:
+  compartment_ocid: "${OCI_COMPARTMENT_OCID}"
+  endpoint: "https://inference.generativeai.us-chicago-1.oci.oraclecloud.com"
+  profile_name: "DEFAULT"
+  
+# Model Configuration
+models:
+  # Embedding Models
+  embedding:
+    type: "OCI"  # Options: OCI
+    model_name: "cohere.embed-multilingual-v3.0"
+    tokenizer: "Cohere/Cohere-embed-multilingual-v3.0"
+    truncate: "END"
+    bits: 64  # Options: 32, 64
+  
+  # Generation Models
+  generation:
+    type: "OCI"  # Options: OCI, LLAMA
+    default_model: "cohere.command-r-plus-08-2024"
+    available_models:
+      - "cohere.command-r-plus-08-2024"
+      - "cohere.command-r-16k"
+      - "meta.llama-3-70b-instruct"
+    context_size: 128000
+    
+  # Reranker Configuration
+  reranker:
+    enabled: false
+    type: "COHERE"  # Options: COHERE
+    api_key: "${COHERE_API_KEY}"  # Set via environment variable
+    model_id: ""
+
+# RAG Configuration
+rag:
+  # Chunking Settings
+  chunking:
+    enabled: true
+    max_chunk_size: 1000
+    chunk_overlap: 100
+    
+  # Retrieval Settings
+  retrieval:
+    top_k: 3
+    top_n: 3
+    similarity_threshold: 0.35
+    enable_approximate: false  # Enable HNSW index for faster queries
+    
+  # Generation Settings
+  generation:
+    max_tokens: 600
+    temperature: 0.1
+    stream: false
+    
+  # Chat Engine Settings
+  chat:
+    mode: "context"  # Options: context, condense_question, react
+    memory_token_limit: 3000
+    system_prompt: |
+      You are a helpful AI assistant for document analysis.
+      IMPORTANT: Always respond in the SAME LANGUAGE as the user's question.
+      - If the user asks in English, respond in English.
+      - If the user asks in Arabic, respond in Arabic.
+      - Do not mix languages in your response.
+
+# Document Processing
+documents:
+  upload_dir: "data/unprocessed"
+  processed_dir: "data/processed"
+  batch_size: 40
+  supported_formats:
+    - "pdf"
+    - "txt"
+    - "csv"
+  id_generation_method: "HASH"  # Options: HASH, LLINDEX
+
+# UI Configuration
+ui:
+  show_references: true
+  enable_sidebar: true
+  collapsed_sidebar: true
+  file_uploader:
+    accept_multiple: true
+    max_file_size: 200  # MB
+  chat:
+    input_placeholder: "Hello, how can I help you?"
+    clear_button_text: "Clear Chat History"
+
+# Logging Configuration
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(levelname)s - %(message)s"
+  file: "app.log"
+  console: true
+
+# Observability
+observability:
+  phoenix:
+    enabled: false
+    port: "6006"
+    host: "0.0.0.0"
+
+# Features (currently none enabled)
