@@ -7,25 +7,6 @@ Enterprise-grade Retrieval-Augmented Generation (RAG) chatbot powered by Oracle 
 [![OCI GenAI](https://img.shields.io/badge/OCI-GenAI-orange.svg)](https://www.oracle.com/artificial-intelligence/generative-ai/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32+-red.svg)](https://streamlit.io/)
 
-## 🎯 Features
-
-- **🔍 Intelligent Document Q&A** - RAG-based answers from your documents
-- **🌐 Multilingual Support** - Works in English, Arabic, and 100+ languages
-- **📊 Vector Search** - Oracle 23ai with HNSW indexing
-- **🤖 Multiple LLMs** - Cohere Command R+, Llama 3, and more
-- **⚙️ Template-Based Config** - YAML + environment variables
-- **🔒 Enterprise Security** - Wallet-based DB connections, no hardcoded secrets
-- **📈 Production Ready** - Comprehensive logging, error handling, type hints
-
-## 📋 Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Architecture](#architecture)
-- [Troubleshooting](#troubleshooting)
-- [Project Structure](#project-structure)
 
 ## 🔧 Prerequisites
 
@@ -45,7 +26,7 @@ Enterprise-grade Retrieval-Augmented Generation (RAG) chatbot powered by Oracle 
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/oracle-rag-chatbot.git
+git https://github.com/ranvir-rana/oracle-rag-chatbot.git
 cd oracle-rag-chatbot
 ```
 
