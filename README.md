@@ -179,11 +179,6 @@ models:
       - "meta.llama-3-70b-instruct"
 ```
 
-**Available Models:**
-- `cohere.command-r-plus-08-2024` (Recommended - Best quality)
-- `cohere.command-r-16k` (Fast, 16K context)
-- `meta.llama-3-70b-instruct` (Alternative)
-
 #### RAG Settings
 
 ```yaml
@@ -229,7 +224,7 @@ rag:
 
 **English:**
 ```
-What is the net profit for Qatar National Bank in 2024?
+What is the net profit for National Bank in 2024?
 ```
 
 **Arabic:**
@@ -346,9 +341,6 @@ oracle-rag-chatbot/
    chmod 600 wallet/*
    ```
 
-## 📄 License
-
-This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
