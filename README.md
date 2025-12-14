@@ -25,8 +25,7 @@ Enterprise-grade Retrieval-Augmented Generation (RAG) chatbot powered by Oracle 
 - [Usage](#usage)
 - [Architecture](#architecture)
 - [Troubleshooting](#troubleshooting)
-- [Git Commands](#git-commands-to-push-to-github)
-- [License](#license)
+- [Project Structure](#project-structure)
 
 ## 🔧 Prerequisites
 
@@ -336,98 +335,6 @@ oracle-rag-chatbot/
 └── .gitignore               # Git exclusions
 ```
 
-## 📝 Git Commands to Push to GitHub
-
-### First Time Setup
-
-```bash
-# 1. Initialize git (if not already done)
-git init
-
-# 2. Add all files
-git add .
-
-# 3. Commit
-git commit -m "Initial commit: Oracle 23ai RAG Chatbot"
-
-# 4. Create repository on GitHub (via web interface)
-# Go to: https://github.com/new
-# Repository name: oracle-rag-chatbot
-# Description: Enterprise RAG chatbot with Oracle 23ai and OCI GenAI
-# Public/Private: Your choice
-# DO NOT initialize with README (we already have one)
-
-# 5. Link local repo to GitHub
-git remote add origin https://github.com/YOUR_USERNAME/oracle-rag-chatbot.git
-
-# 6. Push to GitHub
-git branch -M main
-git push -u origin main
-```
-
-### Subsequent Updates
-
-```bash
-# 1. Check what changed
-git status
-
-# 2. Add changes
-git add .
-
-# 3. Commit with descriptive message
-git commit -m "Update: describe your changes here"
-
-# 4. Push to GitHub
-git push
-```
-
-### Important: Verify Before Push
-
-**Check `.gitignore` is working:**
-
-```bash
-# See what will be committed
-git status
-
-# Should NOT see these files:
-# ❌ .env
-# ❌ wallet/
-# ❌ *.log
-# ❌ data/
-# ❌ venv/
-# ❌ __pycache__/
-
-# If you see them, they're not being ignored!
-```
-
-**If secrets were accidentally added:**
-
-```bash
-# Remove from git (keeps local copy)
-git rm --cached .env
-git rm --cached -r wallet/
-
-# Commit the removal
-git commit -m "Remove sensitive files"
-
-# Push
-git push
-```
-
-### Recommended: Add GitHub Topics
-
-After pushing, add these topics to your repo (on GitHub web interface):
-
-- `oracle`
-- `oracle-database`
-- `rag`
-- `chatbot`
-- `vector-database`
-- `generative-ai`
-- `llm`
-- `streamlit`
-- `python`
-
 ## 🔒 Security Best Practices
 
 1. **Never commit `.env` file** - Contains secrets
@@ -443,12 +350,11 @@ After pushing, add these topics to your repo (on GitHub web interface):
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
+## 👨‍💻 Author
 
-- Oracle 23ai Vector Database
-- OCI Generative AI Services
-- LlamaIndex Framework
-- Streamlit
+**Ranvir Rana**  
+Principal Advanced Services Engineer  
+Oracle Customer Success Services (CSS)
 
 ---
 
