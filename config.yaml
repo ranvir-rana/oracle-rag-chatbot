@@ -14,7 +14,7 @@ app:
 database:
   user: "ADMIN"
   password: "${DB_PASSWORD}"  # Set via environment variable
-  dsn: "dsn_of_database"
+  dsn: "mydb_high"
   host_ip: ""
   service: ""
   
